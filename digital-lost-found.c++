@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     cout<<"Welcome to Lost & Found System!"<<endl;
     int choice;
-    cout<<"What to you want to do?"<<endl;
+    cout<<"What do you want to do?"<<endl;
     cout<<"1. Report Lost Item."<<endl;
     cout<<"2. View All Lost Itmes.(coming soon)"<<endl;
     cout<<"3. Exit"<<endl;
@@ -28,8 +28,16 @@ int main() {
                  getline(cin,description);
                      cout<<"contact number: "<<endl;
                      getline(cin,contact);
-
+                    
+                     cout<<"Lost Item Details"<<endl;
+                     cout<<"Name: "<<name<<endl;
+                     cout<<"Item: "<<item<<endl;
+                     cout<<"Lost Location: "<<lostlocation<<endl;
+                     cout<<"Date: "<<date<<endl;
+                     cout<<"Description: "<<description<<endl;
+                     cout<<"Contact Number: "<<contact<<endl; 
     }
+
     else if (choice == 2) {
         cout<<"This feature is currently not available. Please try again later."<<endl;
     }
