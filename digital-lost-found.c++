@@ -10,6 +10,21 @@ int main() {
     cin>>choice;
 
     if (choice == 1) {
+       
+        string name,item,lostlocation,date,description,contact;
+        cout<<"lost item report form"<<endl;
+          cout<<"enter your name: "<<endl;
+          getline(cin,name);
+          cout<<"enter the name of the lost item: "<<endl;
+          getline(cin,item);
+          cout<<"where did you lose it: "<<endl;
+            getline(cin,lostlocation);
+            cout<<"when did you lose it: "<<endl;
+               getline(cin,date);
+                 cout<<"description of the item(colour/brand/feature): "<<endl;
+                 getline(cin,description);
+                     cout<<"contact number: "<<endl;
+                     getline(cin,contact);
 
     }
     else if (choice == 2) {
