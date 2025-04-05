@@ -29,6 +29,14 @@ int main() {
                      cout<<"contact number: "<<endl;
                      getline(cin,contact);
 
+                     cout<<"Lost Item Details"<<endl;
+                     cout<<"Name: "<<name<<endl;
+                     cout<<"Item: "<<item<<endl;
+                     cout<<"Lost Location: "<<lostlocation<<endl;
+                     cout<<"Date: "<<date<<endl;
+                     cout<<"Description: "<<description<<endl;
+                     cout<<"Contact Number: "<<contact<<endl;
+
     }
 
     else if (choice == 2) {
