@@ -4,10 +4,13 @@ using namespace std;
 int main() {
     cout<<"Welcome to Lost & Found System!"<<endl;
     int choice;
+    cout<<"What to you want to do?"<<endl;
     cout<<"1. Report Lost Item."<<endl;
     cout<<"2. View All Lost Itmes.(coming soon)"<<endl;
     cout<<"3. Exit"<<endl;
+    cout<<"Enter your choice: ";
     cin>>choice;
+    cin.ignore();
 
     if (choice == 1) {
        
