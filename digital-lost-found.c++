@@ -15,7 +15,7 @@ int main() {
     if (choice == 1) {
        
         string name,item,lostlocation,date,description,contact;
-        cout<<"lost item report form"<<endl;
+        cout<<"Lost Item Report Form"<<endl;
           cout<<"enter your name: "<<endl;
           getline(cin,name);
           cout<<"enter the name of the lost item: "<<endl;
