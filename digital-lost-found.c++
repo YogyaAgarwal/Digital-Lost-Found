@@ -37,6 +37,16 @@ int main() {
                      cout<<"Description: "<<description<<endl;
                      cout<<"Contact Number: "<<contact<<endl;
 
+                     char confirm;
+                     cout<<"Do you want to summit this report?(Y/N): "<<endl;
+                     cin>>confirm;
+                      if(confirm=='Y'||confirm=='y'){
+                        cout<<"Thank you! your lost item has been recorded "<<endl;
+                      }
+                      else{
+                        cout<<"submission cancelled "<<endl;
+                      }
+
     }
 
     else if (choice == 2) {
@@ -46,7 +56,6 @@ int main() {
         cout<<"Exitting the program."<<endl;
     }
     else {
-        cout<<"Invalid choice! Please enter a valid choice."<<endl;
         cout<<"Invalid choice! Please enter a valid choice."<<endl;
     }
 } 
