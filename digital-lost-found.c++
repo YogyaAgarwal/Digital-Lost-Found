@@ -2,8 +2,10 @@
 using namespace std;
 
 int main() {
+
+  int choice;
+    do{
     cout<<"Welcome to Lost & Found System!"<<endl;
-    int choice;
     cout<<"What do you want to do?"<<endl;
     cout<<"1. Report Lost Item."<<endl;
     cout<<"2. View All Lost Itmes.(coming soon)"<<endl;
@@ -58,4 +60,4 @@ int main() {
     else {
         cout<<"Invalid choice! Please enter a valid choice."<<endl;
     }
-}
+} 
