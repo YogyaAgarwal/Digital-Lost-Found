@@ -11,7 +11,7 @@ int main() {
     cout<<"Welcome to Lost & Found System!"<<endl;
     cout<<"What do you want to do?"<<endl;
     cout<<"1. Report Lost Item."<<endl;
-    cout<<"2. View All Lost Itmes.(coming soon)"<<endl;
+    cout<<"2. View All Lost Itmes."<<endl;
     cout<<"3. Exit"<<endl;
     cout<<"Enter your choice: ";
     cin>>choice;
@@ -69,7 +69,17 @@ int main() {
     }
 
     else if (choice == 2) {
-        cout<<"This feature is currently not available. Please try again later."<<endl;
+        ifstream file("lost_items.txt");
+        if (file.is_open()) {
+            string line;
+            cout << "Lost Items Report:" << endl;
+            while (getline(file, line)) {
+                cout << line << endl;
+            }
+            file.close();
+        } else {
+            cout << "Error opening file!" << endl;
+        }
     }
     else if (choice == 3) {
         cout<<"Exitting the program."<<endl;
