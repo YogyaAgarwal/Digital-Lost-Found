@@ -59,5 +59,9 @@ int main() {
     }
     else {
         cout<<"Invalid choice! Please enter a valid choice."<<endl;
-    }
-} 
+    } 
+    
+  }while (choice!=3);
+
+    return 0;
+  }
