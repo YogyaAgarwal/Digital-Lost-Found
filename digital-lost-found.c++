@@ -87,6 +87,8 @@ int main() {
     else {
         cout<<"Invalid choice! Please enter a valid choice."<<endl;
     } 
+               cout << "\nPress Enter to continue...";
+                 cin.get();
     
   }while (choice!=3);
 
