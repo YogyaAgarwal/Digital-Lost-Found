@@ -1,7 +1,10 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
 int main() {
+
 
   int choice;
     do{
@@ -42,10 +45,22 @@ int main() {
                      char confirm;
                      cout<<"Do you want to summit this report?(Y/N): "<<endl;
                      cin>>confirm;
+                     cin.ignore();
                       if(confirm=='Y'||confirm=='y'){
+                        ofstream file("lost_items.txt", ios::app);
+                        if (file.is_open()) {
+                            file<<"Name: "<<name<<endl;
+                            file<<"Item: "<<item<<endl;
+                            file<<"Location: "<<lostlocation<<endl;
+                            file<<"Date: "<<date<<endl;
+                            file<<"Description: "<<description<<endl;
+                            file<<"Contact: "<<contact<<endl;
+                            file << "-------------------------\n";
+                            file.close();      
                         cout<<"Thank you! your lost item has been recorded "<<endl;
                       }
-                      else{
+                    }
+                    else{
                         cout<<"submission cancelled "<<endl;
                       }
 
