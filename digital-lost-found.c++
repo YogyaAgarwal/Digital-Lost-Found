@@ -58,10 +58,12 @@ int main() {
                             file << "-------------------------\n";
                             file.close();      
                         cout<<"Thank you! your lost item has been recorded "<<endl;
+                      } else {
+                        cout<<"Error opening file!"<<endl;
                       }
                     }
                     else{
-                        cout<<"submission cancelled "<<endl;
+                        cout<<"Submission Cancelled!"<<endl;
                       }
 
     }
