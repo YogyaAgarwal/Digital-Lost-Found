@@ -13,6 +13,7 @@ int main() {
     cout<<"1. Report Lost Item."<<endl;
     cout<<"2. View All Lost Itmes."<<endl;
     cout<<"3. Exit"<<endl;
+    cout<<"4. Report found item."<<endl;
     cout<<"Enter your choice: ";
     cin>>choice;
     cin.ignore();
@@ -83,13 +84,62 @@ int main() {
     }
     else if (choice == 3) {
         cout<<"Exiting the program."<<endl;
-    }
-    else {
-        cout<<"Invalid choice! Please enter a valid choice."<<endl;
-    } 
-               cout << "\nPress Enter to continue...";
-               cin.get();      
-    
+    }      
+               else if (choice == 4) {
+       
+                string findername,founditem,foundlocation,founddate,fdescription,fcontact;
+                cout<<"Lost Item Report Form"<<endl;
+                  cout<<"Enter your name: "<<endl;
+                  getline(cin,findername);
+                  cout<<"Enter the name of the found item: "<<endl;
+                  getline(cin,founditem);
+                  cout<<"Where did you found it: "<<endl;
+                    getline(cin,foundlocation);
+                    cout<<"When did you find it: "<<endl;
+                       getline(cin,founddate);
+                         cout<<"Description of the found item(colour/brand/feature): "<<endl;
+                         getline(cin,fdescription);
+                             cout<<"Contact Number: "<<endl;
+                             getline(cin,fcontact);
+        
+                             cout<<"Found Item Details"<<endl;
+                             cout<<"Finder's Name: "<<findername<<endl;
+                             cout<<"Found Item: "<<founditem<<endl;
+                             cout<<"Found Location: "<<foundlocation<<endl;
+                             cout<<"Date of finding: "<<founddate<<endl;
+                             cout<<"Description of the found item: "<<fdescription<<endl;
+                             cout<<"Finder's Contact Number: "<<fcontact<<endl;
+        
+                             char confirm;
+                             cout<<"Do you want to submit this report?(Y/N): "<<endl;
+                             cin>>confirm;
+                             cin.ignore();
+                              if(confirm=='Y'||confirm=='y'){
+                                ofstream file("found_items.txt", ios::app);
+                                if (file.is_open()) {
+                                    file<<"Finder's Name: "<<findername<<endl;
+                                    file<<"Found Item: "<<founditem<<endl;
+                                    file<<"Found Location: "<<foundlocation<<endl;
+                                    file<<"Date of finding: "<<founddate<<endl;
+                                    file<<"Description of the found item: "<<fdescription<<endl;
+                                    file<<"Finder's Contact Number: "<<fcontact<<endl;
+                                    file << "-------------------------\n";
+                                    file.close();      
+                                cout<<"Thank you! Your found item has been recorded."<<endl;
+                              } else {
+                                cout<<"Error opening file!"<<endl;
+                              }
+                            }
+                            else{
+                                cout<<"Submission Cancelled!"<<endl;
+                              }
+        
+            }
+            else {
+              cout<<"Invalid choice! Please enter a valid choice."<<endl;
+          } 
+                     cout << "\nPress Enter to continue...";
+                     cin.get();
   }while (choice!=3);
 
     return 0;
