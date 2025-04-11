@@ -135,12 +135,44 @@ int main() {
                               }
         
             }
-            else {
-              cout<<"Invalid choice! Please enter a valid choice."<<endl;
-          } 
-                     cout << "\nPress Enter to continue...";
-                     cin.get();
-  }while (choice!=3);
+           
+        
+  else if (choice==5) {
+    ifstream file("found_items.txt");
+    
+    if (file.is_open()) {
+        string line;
+        
+        cout<<"\nFound Items Report: \n\n";
+        
+        while (getline(file, line)) {
+            if (line.find("Found Item: ") != string::npos)
+            {
+                cout<<line<<endl;
+            } else if (line.find("Found Location: ") != string::npos) {
+                cout<<line<<endl;
+            } else if (line.find("Date of finding: ") != string::npos) {
+                cout<<line<<endl;
+                cout<<"-----------------------------------------------"<<endl;
+            }
+        }
+        cout<<"\nNote: To enquire/claim an item, please contact Lost & Found desk with proper proof."<<endl;
+        file.close();
+    } else {
+        cout<<"Error opening file!"<<endl;
+    }
+}                                    
+
+       
+else {
+  cout<<"Invalid choice! Please enter a valid choice."<<endl;
+} 
+         cout << "\nPress Enter to continue...";
+         cin.get();
+         
+
+  
+ } while (choice!=3);
 
     return 0;
   }
