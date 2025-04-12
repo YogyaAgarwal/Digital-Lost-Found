@@ -11,9 +11,11 @@ int main() {
     cout<<"Welcome to Lost & Found System!"<<endl;
     cout<<"What do you want to do?"<<endl;
     cout<<"1. Report Lost Item."<<endl;
-    cout<<"2. View All Lost Itmes."<<endl;
-    cout<<"3. Exit"<<endl;
-    cout<<"4. Report found item."<<endl;
+    cout<<"2. Report Found Item."<<endl;
+    cout<<"3. View All Lost Itmes."<<endl;
+    cout<<"4. View All Found Items."<<endl;
+    cout<<"5. Search Lost/Found Items."<<endl;
+    cout<<"6. Exit"<<endl;
     cout<<"Enter your choice: ";
     cin>>choice;
     cin.ignore();
@@ -127,11 +129,8 @@ int main() {
         } else {
             cout<<"Error opening file!"<<endl;
         }
-    }
-    else if (choice == 3) {
-        cout<<"Exiting the program."<<endl;
-    }      
-               else if (choice == 4) {
+    }     
+               else if (choice == 3) {
        
                 string findername,founditem,foundlocation,founddate,fdescription,fcontact;
                 cout<<"Lost Item Report Form"<<endl;
@@ -229,7 +228,7 @@ int main() {
             }
            
         
-  else if (choice==5) {
+  else if (choice==4) {
     ifstream file("found_items.txt");
     
     if (file.is_open()) {
@@ -255,7 +254,7 @@ int main() {
     }
 } 
 
-else if (choice==6) {
+else if (choice==5) {
   int searchchoice;
   cout<<"\nSearch Menu: "<<endl;
   cout<<"1. Search in Lost Items"<<endl;
@@ -359,6 +358,9 @@ else if (choice==6) {
   }
 }
 
+else if (choice == 6) {
+  cout<<"Exiting the program."<<endl;
+} 
        
 else {
   cout<<"Invalid choice! Please enter a valid choice."<<endl;
@@ -368,7 +370,7 @@ else {
          
 
   
- } while (choice!=3);
+ } while (choice!=6);
 
     return 0;
   }
