@@ -66,6 +66,52 @@ int main() {
                     else{
                         cout<<"Submission Cancelled!"<<endl;
                       }
+                      ifstream file("found_items.txt");
+    if (file.is_open()) {
+        string line, block = "";
+        bool found = false;
+       
+        string keyword1 = item;
+        string keyword2 = description;
+       
+        for (int i=0; i<keyword1.length(); i++)
+  {
+    if (keyword1[i]>='A' && keyword1[i]<='Z') {
+      keyword1[i] += 32;
+    }
+  }
+  for (int i=0; i<keyword2.length(); i++)
+  {
+    if (keyword2[i]>='A' && keyword2[i]<='Z') {
+      keyword2[i] += 32;
+    }
+  }
+ 
+  while (getline(file, line)) {
+      block += line + "\n";
+     
+      if (line == "-------------------------") {
+          string temp = block;
+          for (int i=0; i<temp.length(); i++)
+          {
+            if (temp[i]>='A' && temp[i]<='Z') {
+              temp[i] += 32;
+            }
+          }
+         
+          if (temp.find(keyword1) != string::npos || temp.find(keyword2) != string::npos) {
+              cout<<"\nThis seems to match with a Found Item in our records: "<<endl;
+              cout<<block<<endl;
+              found = true;
+          }
+          block = "";
+  }
+    }
+    file.close();
+    } else {
+        cout<<"Error opening file!"<<endl;
+    }
+
 
     }
 
@@ -133,6 +179,52 @@ int main() {
                             else{
                                 cout<<"Submission Cancelled!"<<endl;
                               }
+                              ifstream file("lost_items.txt");
+                              if (file.is_open()) {
+                                  string line, block = "";
+                                  bool found = false;
+                                 
+                                  string keyword1 = founditem;
+                                  string keyword2 = fdescription;
+                                 
+                                  for (int i=0; i<keyword1.length(); i++)
+                            {
+                              if (keyword1[i]>='A' && keyword1[i]<='Z') {
+                                keyword1[i] += 32;
+                              }
+                            }
+                            for (int i=0; i<keyword2.length(); i++)
+                            {
+                              if (keyword2[i]>='A' && keyword2[i]<='Z') {
+                                keyword2[i] += 32;
+                              }
+                            }
+                           
+                            while (getline(file, line)) {
+                                block += line + "\n";
+                               
+                                if (line == "-------------------------") {
+                                    string temp = block;
+                                    for (int i=0; i<temp.length(); i++)
+                                    {
+                                      if (temp[i]>='A' && temp[i]<='Z') {
+                                        temp[i] += 32;
+                                      }
+                                    }
+                                   
+                                    if (temp.find(keyword1) != string::npos || temp.find(keyword2) != string::npos) {
+                                        cout<<"\nThis seems to match with a Lost Item in our records: "<<endl;
+                                        cout<<block<<endl;
+                                        found = true;
+                                    }
+                                    block = "";
+                            }
+                              }
+                              file.close();
+                              } else {
+                                  cout<<"Error opening file!"<<endl;
+                              }
+                                  
         
             }
            
