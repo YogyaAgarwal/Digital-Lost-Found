@@ -12,3 +12,10 @@ Date of losing: 1918
 Description of the lost item: a huge ship made of steel
 Contact Number: 9876543210
 -------------------------
+Name: Yogya Agarwal
+Lost Item: bag
+Lost Location: lth
+Date of losing: 10/04/2025
+Description of the lost item: american tourister
+Contact Number: 9898989898
+-------------------------

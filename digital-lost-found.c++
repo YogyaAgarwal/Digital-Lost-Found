@@ -117,7 +117,7 @@ int main() {
 
     }
 
-    else if (choice == 2) {
+    else if (choice == 3) {
         ifstream file("lost_items.txt");
         if (file.is_open()) {
             string line;
@@ -130,10 +130,10 @@ int main() {
             cout<<"Error opening file!"<<endl;
         }
     }     
-               else if (choice == 3) {
+               else if (choice == 2) {
        
                 string findername,founditem,foundlocation,founddate,fdescription,fcontact;
-                cout<<"Lost Item Report Form"<<endl;
+                cout<<"Found Item Report Form"<<endl;
                   cout<<"Enter your name: "<<endl;
                   getline(cin,findername);
                   cout<<"Enter the name of the found item: "<<endl;
