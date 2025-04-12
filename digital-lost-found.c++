@@ -73,13 +73,13 @@ int main() {
         ifstream file("lost_items.txt");
         if (file.is_open()) {
             string line;
-            cout << "Lost Items Report:" << endl;
+            cout<<"\nLost Items Report: \n\n";
             while (getline(file, line)) {
                 cout << line << endl;
             }
             file.close();
         } else {
-            cout << "Error opening file!" << endl;
+            cout<<"Error opening file!"<<endl;
         }
     }
     else if (choice == 3) {
@@ -161,13 +161,117 @@ int main() {
     } else {
         cout<<"Error opening file!"<<endl;
     }
-}                                    
+} 
+
+else if (choice==6) {
+  int searchchoice;
+  cout<<"\nSearch Menu: "<<endl;
+  cout<<"1. Search in Lost Items"<<endl;
+  cout<<"2. Search in Found Items"<<endl;
+  cout<<"Enter your choice: ";
+  cin>>searchchoice;
+
+
+  if (searchchoice == 1) {
+    string keyword;
+  cout<<"Enter a keyword to search: ";
+  cin.ignore();
+  getline(cin, keyword);
+  for (int i=0; i<keyword.length(); i++)
+  {
+    if (keyword[i]>='A' && keyword[i]<='Z') {
+      keyword[i] += 32;
+    }
+  }
+
+    cout<<"\n---- Matching Lost Items ----"<<endl;
+    ifstream file("lost_items.txt");
+    if (file.is_open()) {
+      string line, block = "";
+      bool found = false;
+      while (getline(file, line)) {
+        block += line + "\n";
+
+        if (line == "-------------------------") {
+          string temp = block;
+          for (int i=0; i<temp.length(); i++)
+          {
+            if (temp[i]>='A' && temp[i]<='Z') {
+              temp[i] += 32;
+            }
+          }
+        
+
+        if (temp.find(keyword) != string::npos) {
+          cout<<block<<endl;
+          found = true;
+        }
+        block = "";
+      }
+      }
+      if (!found) {
+        cout<<"No matching lost items found."<<endl;
+      }
+      file.close();
+    } else {
+      cout<<"Error opening file!"<<endl;
+    }
+  } 
+  
+  else if (searchchoice == 2) {
+    string keyword;
+  cout<<"Enter a keyword to search: ";
+  cin.ignore();
+  getline(cin, keyword);
+  for (int i=0; i<keyword.length(); i++)
+  {
+    if (keyword[i]>='A' && keyword[i]<='Z') {
+      keyword[i] += 32;
+    }
+  }
+
+    cout<<"\n---- Matching Found Items ----"<<endl;
+    ifstream file("found_items.txt");
+    if (file.is_open()) {
+      string line, block = "";
+      bool found = false;
+      while (getline(file, line)) {
+        block += line + "\n";
+
+        if (line == "-------------------------") {
+          string temp = block;
+          for (int i=0; i<temp.length(); i++)
+          {
+            if (temp[i]>='A' && temp[i]<='Z') {
+              temp[i] += 32;
+            }
+          }
+        
+
+        if (temp.find(keyword) != string::npos) {
+          cout<<block<<endl;
+          found = true;
+        }
+        block = "";
+      }
+      }
+      if (!found) {
+        cout<<"No matching found items found."<<endl;
+      }
+      file.close();
+    } else {
+      cout<<"Error opening file!"<<endl;
+    }
+  } else {
+    cout<<"Invalid Choice! Returning to main menu...."<<endl;
+  }
+}
 
        
 else {
   cout<<"Invalid choice! Please enter a valid choice."<<endl;
 } 
-         cout << "\nPress Enter to continue...";
+         cout << "\nPress Enter to continue..."<<endl;
          cin.get();
          
 
