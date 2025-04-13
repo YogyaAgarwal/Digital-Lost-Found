@@ -24,20 +24,24 @@ int main() {
        
         string name,item,lostlocation,date,description,contact;
         cout<<"Lost Item Report Form"<<endl;
-          cout<<"Enter your name: "<<endl;
+          cout<<"Enter your name: ";
           getline(cin,name);
-          cout<<"Enter the name of the lost item: "<<endl;
+          cout<<"Enter the name of the lost item: ";
           getline(cin,item);
-          cout<<"Where did you lose it: "<<endl;
+          cout<<"Where did you lose it: ";
             getline(cin,lostlocation);
-            cout<<"When did you lose it: "<<endl;
+            cout<<"When did you lose it: ";
                getline(cin,date);
-                 cout<<"Description of the lost item(colour/brand/feature): "<<endl;
+                 cout<<"Description of the lost item(colour/brand/feature): ";
                  getline(cin,description);
-                     cout<<"Contact Number: "<<endl;
-                     getline(cin,contact);
+                     cout<<"Contact Number: ";
+                     cin>>contact;
+                     while (contact[0] == '0' || contact.size() != 10) {
+                      cout<<"Entered contact number is INVALID! Please enter a VALID 10 digit contact number." << endl;
+                      cin>>contact; 
+                  }
 
-                     cout<<"Lost Item Details"<<endl;
+                     cout<<"\nLost Item Details"<<endl;
                      cout<<"Name: "<<name<<endl;
                      cout<<"Lost Item: "<<item<<endl;
                      cout<<"Lost Location: "<<lostlocation<<endl;
@@ -134,20 +138,24 @@ int main() {
        
                 string findername,founditem,foundlocation,founddate,fdescription,fcontact;
                 cout<<"Found Item Report Form"<<endl;
-                  cout<<"Enter your name: "<<endl;
+                  cout<<"Enter your name: ";
                   getline(cin,findername);
-                  cout<<"Enter the name of the found item: "<<endl;
+                  cout<<"Enter the name of the found item: ";
                   getline(cin,founditem);
-                  cout<<"Where did you found it: "<<endl;
+                  cout<<"Where did you found it: ";
                     getline(cin,foundlocation);
-                    cout<<"When did you find it: "<<endl;
+                    cout<<"When did you find it: ";
                        getline(cin,founddate);
-                         cout<<"Description of the found item(colour/brand/feature): "<<endl;
+                         cout<<"Description of the found item(colour/brand/feature): ";
                          getline(cin,fdescription);
-                             cout<<"Contact Number: "<<endl;
-                             getline(cin,fcontact);
+                             cout<<"Contact Number: ";
+                             cin>>fcontact;
+                             while (fcontact[0] == '0' || fcontact.size() != 10) {
+                              cout<<"Entered contact number is INVALID! Please enter a VALID 10 digit contact number." << endl;
+                              cin>>fcontact; 
+                          }
         
-                             cout<<"Found Item Details"<<endl;
+                             cout<<"\nFound Item Details"<<endl;
                              cout<<"Finder's Name: "<<findername<<endl;
                              cout<<"Found Item: "<<founditem<<endl;
                              cout<<"Found Location: "<<foundlocation<<endl;
