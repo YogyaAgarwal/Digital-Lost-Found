@@ -56,7 +56,7 @@ This project was created as part of a team coding session focused on learning fi
 
 ## 👥 Team Contributions
 
-- *Yogya Agarwal* ([GitHub](https://github.com/YogyaAgarwal))  
+- *Yogya Agarwal*  
   - Developed *Search Feature* with case-insensitive keyword matching  
   - Added *Contact Number Validation* for 10-digit check  
   - Designed *Main Menu Navigation System*  
@@ -65,19 +65,19 @@ This project was created as part of a team coding session focused on learning fi
   - Managed *merge conflicts*, final formatting & cleanup  
   - Contributed to *initial setup and welcome UI*
 
-- *Yash Garg* ([GitHub](https://github.com/786yashgarg))  
+- *Yash Garg*   
   - Developed *Lost Item Input Form*  
   - Implemented *View All Found Items* feature  
   - Added *File Reading/Writing Logic*  
   - Helped with *Git Conflict Resolutions & Merging*
 
-- *Yash Pareek* ([GitHub](https://github.com/Yashp0101))  
+- *Yash Pareek*   
   - Implemented *Auto-Matching Logic* after item reporting  
   - Added *Display & Confirmation* before submission  
   - Designed *View Lost Items* feature  
   - Managed *file formatting and display* refinements
 
-- *Raghav Manihar* ([GitHub](https://github.com/RaghavManihar06))  
+- *Raghav Manihar*  
   - Built *Report Found Item* form  
   - Added *Looping Logic* to re-show menu until exit  
   - Improved *Main Menu Numbering & Reorganization*  
